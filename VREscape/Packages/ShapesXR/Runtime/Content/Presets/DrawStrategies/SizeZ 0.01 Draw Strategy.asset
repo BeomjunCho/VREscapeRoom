@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ac96717920f4753a489199956e72b8e, type: 3}
+  m_Name: SizeZ 0.01 Draw Strategy
+  m_EditorClassIdentifier: 
+  _allowApplyMultiplier: 1
+  _sizeConstraints:
+    X:
+      Enabled: 0
+      Value: 0
+    Y:
+      Enabled: 0
+      Value: 0
+    Z:
+      Enabled: 1
+      Value: 0.01

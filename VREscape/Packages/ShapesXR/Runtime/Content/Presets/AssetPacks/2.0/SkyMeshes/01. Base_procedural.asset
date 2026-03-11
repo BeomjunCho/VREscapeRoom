@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8a2bb0db1e49c19b9aff74740e63c8, type: 3}
+  m_Name: 01. Base_procedural
+  m_EditorClassIdentifier: 
+  _asset: {fileID: 0}
+  _displayName: Procedural
+  _thumbnail: {fileID: 0}
+  _visibleInLibrary: 0
+  _serializedGuid: 00000000000000000000000000000000
+  _guid:
+    m_GuidLow: 5234048227652741462
+    m_GuidHigh: 4341791484310281347
+  _assetReference:
+    m_AssetGUID: 3e369e9aa2559534e9c1e9a6dd7e6f10
+    m_SubObjectName: 
+    m_SubObjectGUID: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _skyboxTexture: {fileID: 8900000, guid: 3e369e9aa2559534e9c1e9a6dd7e6f10, type: 3}
+  _skyboxPreviewTexture: {fileID: 8900000, guid: 8f5a655044429b64d92e1a38fbcd0292,
+    type: 3}
+  _isDefault: 1

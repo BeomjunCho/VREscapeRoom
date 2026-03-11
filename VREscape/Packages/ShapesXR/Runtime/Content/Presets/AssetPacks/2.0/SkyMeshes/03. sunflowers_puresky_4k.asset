@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8a2bb0db1e49c19b9aff74740e63c8, type: 3}
+  m_Name: 03. sunflowers_puresky_4k
+  m_EditorClassIdentifier: 
+  _asset: {fileID: 0}
+  _displayName: 
+  _thumbnail: {fileID: 0}
+  _visibleInLibrary: 0
+  _serializedGuid: 00000000000000000000000000000000
+  _guid:
+    m_GuidLow: 5304747934545689279
+    m_GuidHigh: 11647971604200744382
+  _assetReference:
+    m_AssetGUID: b5216711d28200a4e8e332bd6849fb7f
+    m_SubObjectName: 
+    m_SubObjectGUID: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _skyboxTexture: {fileID: 8900000, guid: b5216711d28200a4e8e332bd6849fb7f, type: 3}
+  _skyboxPreviewTexture: {fileID: 8900000, guid: 69f038e8b03571949839688f6f697440,
+    type: 3}
+  _isDefault: 0
