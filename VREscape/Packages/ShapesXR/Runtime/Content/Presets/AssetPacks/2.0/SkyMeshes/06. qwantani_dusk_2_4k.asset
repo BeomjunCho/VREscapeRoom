@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8a2bb0db1e49c19b9aff74740e63c8, type: 3}
+  m_Name: 06. qwantani_dusk_2_4k
+  m_EditorClassIdentifier: 
+  _asset: {fileID: 0}
+  _displayName: 
+  _thumbnail: {fileID: 0}
+  _visibleInLibrary: 0
+  _serializedGuid: 00000000000000000000000000000000
+  _guid:
+    m_GuidLow: 5397875529804302229
+    m_GuidHigh: 2055902323174699673
+  _assetReference:
+    m_AssetGUID: 25bc1c3cbb14ab2468374c23a29280b3
+    m_SubObjectName: 
+    m_SubObjectGUID: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _skyboxTexture: {fileID: 8900000, guid: 25bc1c3cbb14ab2468374c23a29280b3, type: 3}
+  _skyboxPreviewTexture: {fileID: 8900000, guid: 29dc72aca049c2449915e405e2e1d8bf,
+    type: 3}
+  _isDefault: 0

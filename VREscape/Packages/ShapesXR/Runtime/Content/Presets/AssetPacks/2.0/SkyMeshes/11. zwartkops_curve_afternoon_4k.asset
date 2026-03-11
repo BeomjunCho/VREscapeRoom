@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8a2bb0db1e49c19b9aff74740e63c8, type: 3}
+  m_Name: 11. zwartkops_curve_afternoon_4k
+  m_EditorClassIdentifier: 
+  _asset: {fileID: 0}
+  _displayName: 
+  _thumbnail: {fileID: 0}
+  _visibleInLibrary: 0
+  _serializedGuid: 00000000000000000000000000000000
+  _guid:
+    m_GuidLow: 5180085136293853113
+    m_GuidHigh: 1867498757687192755
+  _assetReference:
+    m_AssetGUID: ccf340e292cc5fe41aa1069a7f7b360f
+    m_SubObjectName: 
+    m_SubObjectGUID: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _skyboxTexture: {fileID: 8900000, guid: ccf340e292cc5fe41aa1069a7f7b360f, type: 3}
+  _skyboxPreviewTexture: {fileID: 8900000, guid: 4a55f572c4ce9974db31f5edbd8a9ad7,
+    type: 3}
+  _isDefault: 0
