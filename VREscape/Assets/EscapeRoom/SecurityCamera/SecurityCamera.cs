@@ -47,7 +47,7 @@ public class SecurityCameraEditor : Editor
             if (!AssetDatabase.IsValidFolder("Assets/RenderTextures"))
                 AssetDatabase.CreateFolder("Assets", "RenderTextures");
 
-            var rt = new RenderTexture(256, 192, 24); 
+            var rt = new RenderTexture(960, 540, 24); 
             string path = AssetDatabase.GenerateUniqueAssetPath($"Assets/EscapeRoom/SecurityCamera/RenderTextures/RT_{secCam.transform.name}.renderTexture");
             AssetDatabase.CreateAsset(rt, path);
             AssetDatabase.SaveAssets();
