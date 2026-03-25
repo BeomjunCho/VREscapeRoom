@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2322283426576901434}
   - component: {fileID: 7568848068477122046}
   - component: {fileID: 8354234627844243984}
-  - component: {fileID: 349676795321687377}
   - component: {fileID: 2448825869557370890}
   - component: {fileID: 3577100578687409014}
+  - component: {fileID: 4079691898345913346}
   m_Layer: 0
   m_Name: TestLaser
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.5, y: 0, z: 1.9}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329107427212478953}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &8354234627844243984
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -89,27 +89,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &349676795321687377
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329107427212478953}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!120 &2448825869557370890
 LineRenderer:
   serializedVersion: 2
@@ -157,10 +136,10 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: -10.5, y: 0, z: 1.9}
-  - {x: -10.5, y: 0, z: 4.949987}
+  - {x: -10.5, y: 0, z: 5001.9}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.5
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -238,9 +217,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d995f94ab9861641a8a0d5c83241076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 100
+  maxDistance: 5000
   hitMask:
     serializedVersion: 2
-    m_Bits: 51
+    m_Bits: 4294967295
   lineWidth: 0.05
   lineColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!64 &4079691898345913346
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329107427212478953}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
