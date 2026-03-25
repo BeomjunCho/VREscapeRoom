@@ -5,23 +5,23 @@ using UnityEditor;
 #endif
 public class SecurityCamera : MonoBehaviour
 {
-    public RenderTexture renderTexture;
+    public RenderTexture RenderTexture;
 
     private void Awake()
     {
         var cam = GetComponentInChildren<Camera>();
-        if (cam.targetTexture == null && renderTexture != null)
-            cam.targetTexture = renderTexture;
+        if (cam.targetTexture == null && RenderTexture != null)
+        {
+            cam.targetTexture = RenderTexture;
+        }
     }
 
     private void OnDestroy()
     {
-        if (renderTexture != null)
-            renderTexture.Release();
+        if (RenderTexture != null)
+            RenderTexture.Release();
     }
 }
-
-// 60 / 25
 
 #if UNITY_EDITOR
 [CustomEditor(typeof(SecurityCamera))]
@@ -48,13 +48,13 @@ public class SecurityCameraEditor : Editor
                 AssetDatabase.CreateFolder("Assets", "RenderTextures");
 
             var rt = new RenderTexture(960, 540, 24); 
-            string path = AssetDatabase.GenerateUniqueAssetPath($"Assets/EscapeRoom/SecurityCamera/RenderTextures/RT_{secCam.transform.name}.renderTexture");
+            string path = AssetDatabase.GenerateUniqueAssetPath($"Assets/EscapeRoom/Puzzles/SecuritySystem/RenderTextures/RT_{secCam.transform.name}.renderTexture");
             AssetDatabase.CreateAsset(rt, path);
             AssetDatabase.SaveAssets();
 
             Undo.RecordObjects(new Object[] { cam, secCam }, "Create Security Camera RT");
             cam.targetTexture = rt;
-            secCam.renderTexture = rt;
+            secCam.RenderTexture = rt;
 
             Debug.Log($"[SecurityCamera] Created '{path}'.");
         }

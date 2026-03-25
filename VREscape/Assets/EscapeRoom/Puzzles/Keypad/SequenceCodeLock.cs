@@ -7,10 +7,16 @@ public class SequenceCodeLock : MonoBehaviour
     public string UnlockCode = "1234";
     private string currentSequence = "";
 
+    public bool IsLocked = true;
+
     // Display
     [SerializeField] private TMP_Text displayText;
     [SerializeField] private MeshRenderer lightIncorrect;
     [SerializeField] private MeshRenderer lightCorrect;
+
+    [SerializeField] private Material defaultLightMat;
+    [SerializeField] private Material greenLightMat;
+    [SerializeField] private Material redLightMat;
 
     private void Awake()
     {
@@ -20,6 +26,8 @@ public class SequenceCodeLock : MonoBehaviour
         {
             button.LockRef = this;
         }
+
+        UpdateDisplay();
     }
 
     public void RegisterInput(string inAction)
@@ -58,17 +66,31 @@ public class SequenceCodeLock : MonoBehaviour
         if(currentSequence == UnlockCode)
         {
             Debug.Log("Correct code!");
+            IsLocked = false;
         }
         else
         {
             Debug.Log("Incorrect code");
+            IsLocked= true;
         }
 
         ClearSequence();
     }
-
     private void UpdateDisplay()
     {
+        // Text
         displayText.text = currentSequence;
+
+        // Light
+        if (IsLocked)
+        {
+            lightIncorrect.material = redLightMat;
+            lightCorrect.material = defaultLightMat;
+        }
+        else
+        {
+            lightIncorrect.material = defaultLightMat;
+            lightCorrect.material = greenLightMat;
+        }
     }
 }
