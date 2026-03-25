@@ -17,22 +17,26 @@ public class SecurityCameraFeed : MonoBehaviour
 
     public void ChangeView()
     {
-        Debug.Log("Changing camera texture to "+ cams[camIndex].GetComponentInChildren<Camera>().targetTexture);
-
-        Debug.Log("Changing camera material " + displayRenderer.materials[displayMatIndex]);
+        //Debug.Log("Changing camera texture to "+ cams[camIndex].GetComponentInChildren<Camera>().targetTexture);
+        //Debug.Log("Changing camera material " + displayRenderer.materials[displayMatIndex]);
 
         camIndex = (camIndex + 1) % cams.Length;
         displayRenderer.materials[displayMatIndex].
             SetTexture("_RenderTexture", cams[camIndex].GetComponentInChildren<Camera>().targetTexture);
 
-        
-
         isZoomed = false;
+        SetZoom();
     }
     public void ToggleZoom()
     {
+        Debug.Log("Toggle zoom");
         isZoomed = !isZoomed;
-        cams[camIndex].GetComponentInChildren<Camera>().focalLength = isZoomed ? 60f : 25f;
+        SetZoom();
+    }
+
+    private void SetZoom()
+    {
+        cams[camIndex].GetComponentInChildren<Camera>().fieldOfView = isZoomed ? 25f : 60f;
     }
 
 }
