@@ -220,7 +220,7 @@ MonoBehaviour:
   maxDistance: 5000
   hitMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 51
   lineWidth: 0.05
   lineColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!64 &4079691898345913346
