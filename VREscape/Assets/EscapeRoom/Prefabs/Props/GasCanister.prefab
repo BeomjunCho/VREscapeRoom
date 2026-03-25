@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 475590500938767768}
   - component: {fileID: 6570537483690499290}
   - component: {fileID: 3569280257701496655}
+  - component: {fileID: 6420983662670527961}
   m_Layer: 0
   m_Name: GasCannisterShort
   m_TagString: Untagged
@@ -109,6 +110,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6816304252841630839, guid: c787f793dc88fbe429533870ba0b7e67, type: 3}
+--- !u!114 &6420983662670527961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2794757427876561746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5147b159b1d4be45901fdd448079014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5215749869610010279
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,7 +165,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8420538240107875259}
   - component: {fileID: 6978913106103320498}
-  - component: {fileID: 5631162207031217370}
   m_Layer: 0
   m_Name: GasCanister
   m_TagString: Untagged
@@ -184,18 +196,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7191686596485652467}
   m_Mesh: {fileID: 0}
---- !u!114 &5631162207031217370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7191686596485652467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5147b159b1d4be45901fdd448079014, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7708223360814098887
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 9148825150387898632}
   - component: {fileID: 3863317035905229796}
   - component: {fileID: 6676656505265644195}
+  - component: {fileID: 2519262250980919685}
   m_Layer: 0
   m_Name: GasCannisterShort.001
   m_TagString: Untagged
@@ -305,3 +306,15 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4221278372373114116, guid: c787f793dc88fbe429533870ba0b7e67, type: 3}
+--- !u!114 &2519262250980919685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7708223360814098887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5147b159b1d4be45901fdd448079014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
