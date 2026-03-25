@@ -4258,6 +4258,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Valve
       objectReference: {fileID: 0}
+    - target: {fileID: 3090492082503889220, guid: afcd0683a21e1384382f45976cfe7ede, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0f9a68ad8aae92246843f01d9ec4d2d3, type: 2}
     - target: {fileID: 7034902711130998000, guid: afcd0683a21e1384382f45976cfe7ede, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
@@ -4849,6 +4853,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5675769205469692927, guid: 90194ba926b09bb49baa628cdf63cff1, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3fb84fb1356830d42b19e93e91efea99, type: 2}
     - target: {fileID: 8806851578988134047, guid: 90194ba926b09bb49baa628cdf63cff1, type: 3}
       propertyPath: m_Name
       value: Cabinet_01
@@ -6207,6 +6215,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3682893070186408561, guid: 31d7273f19cb2734388087eb5b23f946, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: -3559530127726460319, guid: 7760aa3d09f50e84aae6b25d52197453, type: 3}
     - target: {fileID: 4469411919536606474, guid: 31d7273f19cb2734388087eb5b23f946, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.23
