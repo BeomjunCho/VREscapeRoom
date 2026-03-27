@@ -402,7 +402,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5776667314557689382}
-  - component: {fileID: 7929977350177576994}
+  - component: {fileID: 4451597904932524221}
   m_Layer: 0
   m_Name: Keypad
   m_TagString: Untagged
@@ -430,7 +430,7 @@ Transform:
   - {fileID: 6930877740522758133}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7929977350177576994
+--- !u!114 &4451597904932524221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -439,11 +439,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5863250481199804842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc4f93039c9dd4a41bbd8398ea77086a, type: 3}
+  m_Script: {fileID: 11500000, guid: f99ae0d74849a8f4c9d1f0f4a6fc4784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UnlockCode: 1234
   IsLocked: 1
+  UnlockCode: 1234
   displayText: {fileID: 3871195551647492150}
   lightIncorrect: {fileID: 4068525295124797617}
   lightCorrect: {fileID: 3230123649682521280}
