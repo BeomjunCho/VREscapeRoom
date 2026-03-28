@@ -129,8 +129,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1.5
-  m_fontSizeBase: 1.5
+  m_fontSize: 1
+  m_fontSizeBase: 1
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -617,6 +617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8174843824510323224}
   - component: {fileID: 6195667617143471733}
+  - component: {fileID: 190205342640711135}
   m_Layer: 0
   m_Name: DiagnosticPanel
   m_TagString: Untagged
@@ -659,6 +660,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsLocked: 1
   displayText: {fileID: 5672748138263414614}
+  codes:
+  - Code: ggggg
+    DisplayOutput: "[7543] SURVEILLANCE \u2014 RESPONDING "
+  - Code: bbbbb
+    DisplayOutput: "[8528] PRESSURE REGULATION \u2014 RESPONDING"
+  - Code: rrrrr
+    DisplayOutput: "[3217] LASER EMITTER \u2014 NO RESPONSE"
+--- !u!114 &190205342640711135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3593175807997206081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be1a057712e13040abc46d2dee4dc93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultDisplay: 
   defaultLightMat: {fileID: 2100000, guid: 28026387e29a2f2408957306d7b6959f, type: 2}
   greenLightMat: {fileID: 2100000, guid: b764fbd1a5612b841b9c888773a2b225, type: 2}
   redLightMat: {fileID: 2100000, guid: 11bb9ef825d1fe846a7805394479da00, type: 2}
@@ -669,11 +690,6 @@ MonoBehaviour:
   - {fileID: 8389376751982812541}
   - {fileID: 7726832988368729766}
   - {fileID: 4052241591396878620}
-  codes:
-  - Code: rgb
-    DisplayOutput: 
-  - Code: rgb
-    DisplayOutput: 
 --- !u!1 &4987251991977519801
 GameObject:
   m_ObjectHideFlags: 0
