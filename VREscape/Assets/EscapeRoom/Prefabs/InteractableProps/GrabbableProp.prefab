@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 3630776411951894422}
   - component: {fileID: 8759737634505894244}
   - component: {fileID: 310426341492251196}
+  - component: {fileID: 4886783123609380209}
   m_Layer: 0
   m_Name: GrabbableProp
   m_TagString: Untagged
@@ -258,3 +259,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 0.17000002, z: 0.261}
   m_Center: {x: 0.000000007450581, y: 0.08506906, z: 0}
+--- !u!114 &4886783123609380209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7043371286362886480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5147b159b1d4be45901fdd448079014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class SequenceCodeButton : MonoBehaviour
 {
     public string ButtonAction = "";
-    public SequenceCodeLock LockRef;
+    [HideInInspector] public SequenceCodeLock LockRef;
 
     private TMP_Text buttonText;
 
