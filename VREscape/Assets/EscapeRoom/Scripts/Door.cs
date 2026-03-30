@@ -9,6 +9,8 @@ public class Door : MonoBehaviour
     private float targetY = -90f;
     private Transform player;
 
+    [SerializeField] private SequenceCodeLock doorLock = null;
+
     private void Start()
     {
         transform.localRotation = Quaternion.Euler(0f, -90f, 0f);
@@ -27,17 +29,24 @@ public class Door : MonoBehaviour
 
     public void ToggleDoor()
     {
-        if (isOpen)
+        Debug.LogError(doorLock.IsLocked);
+
+        if(doorLock!= null && !doorLock.IsLocked)
         {
-            targetY = -90f;
-        }
-        else
-        {
-            Vector3 toPlayer = player.position - transform.position;
-            float dot = Vector3.Dot(transform.right, toPlayer);
-            targetY = dot >= 0f ? -90f + openAngle : -90f - openAngle;
+            if (isOpen)
+            {
+                targetY = -90f;
+            }
+            else
+            {
+                Vector3 toPlayer = player.position - transform.position;
+                float dot = Vector3.Dot(transform.right, toPlayer);
+                targetY = dot >= 0f ? -90f + openAngle : -90f - openAngle;
+            }
+
+            isOpen = !isOpen;
         }
 
-        isOpen = !isOpen;
+        
     }
 }
