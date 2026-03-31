@@ -30,8 +30,9 @@ public class Door : MonoBehaviour
     public void ToggleDoor()
     {
         Debug.LogError(doorLock.IsLocked);
+        if (doorLock == null) return;
 
-        if(doorLock!= null && !doorLock.IsLocked)
+        if(!doorLock.IsLocked)
         {
             if (isOpen)
             {
@@ -46,7 +47,18 @@ public class Door : MonoBehaviour
 
             isOpen = !isOpen;
         }
+        else if (doorLock.IsLocked)
+        {
+            CancelInvoke(nameof(ResetNudge));
+            targetY = -90f;
+            targetY -= 5f;
+            Invoke(nameof(ResetNudge), 0.15f);
+        }
 
-        
+    }
+
+    private void ResetNudge()
+    {
+        targetY += 5f;
     }
 }
