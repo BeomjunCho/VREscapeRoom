@@ -15,6 +15,7 @@ public class LaserMirror : MonoBehaviour
     private LineRenderer lineRenderer;
 
     private LaserMirror lastHitMirror;
+    private LaserMirror previousMirror;
 
     private void OnEnable()
     {
@@ -26,16 +27,11 @@ public class LaserMirror : MonoBehaviour
         lineRenderer = emitterObject.GetComponent<LineRenderer>();
     }
 
-    private void OnDisable()
-    {
-        DisableLaser();
-    }
-
     private void Update()
     {
         if (!EmitLaser)
         {
-            DisableLaser();
+            DeactivateLaser();
             return;
         }
 
@@ -52,45 +48,61 @@ public class LaserMirror : MonoBehaviour
         bool didHit = Physics.Raycast(origin, direction, out RaycastHit hit, maxDistance, hitMask);
         Vector3 endPoint = didHit ? hit.point : origin + direction * maxDistance;
 
-        // Draw laser
         lineRenderer.enabled = true;
         lineRenderer.positionCount = 2;
         lineRenderer.SetPosition(0, origin);
         lineRenderer.SetPosition(1, endPoint);
 
-        // Get next mirror
         LaserMirror hitMirror = null;
         if (didHit && hit.collider.CompareTag("LaserMirror"))
         {
-            hitMirror = hit.collider.GetComponentInParent<LaserMirror>();
+            LaserMirror hm = hit.collider.GetComponentInParent<LaserMirror>();
+            if (hm != previousMirror)
+                hitMirror = hm;
         }
+
         if (didHit && hit.collider.CompareTag("LaserReceiver"))
         {
-
+            LaserSystem.RegisterInput("Enter");
         }
 
-        // Deactivate
+        // Deactivate previous mirror if it changed
         if (lastHitMirror != null && lastHitMirror != hitMirror)
-        {
-            lastHitMirror.EmitLaser = false;
-        }
+            lastHitMirror.DeactivateLaser();
 
+        // Activate new mirror
         if (hitMirror != null)
         {
-            hitMirror.EmitLaser = true;
+            hitMirror.previousMirror = this;
+            hitMirror.ActivateLaser();
         }
 
         lastHitMirror = hitMirror;
     }
 
-    private void DisableLaser()
+    private void ActivateLaser()
     {
+        if (EmitLaser) return;
+
+        EmitLaser = true;
+        LaserSystem.AppendSequence(this);
+    }
+
+    private void DeactivateLaser()
+    {
+        if (!EmitLaser) return;
+
+        EmitLaser = false;
+        LaserSystem.RemoveSequence(this);
+
+        previousMirror = null;
+
         if (lineRenderer != null)
             lineRenderer.enabled = false;
 
         if (lastHitMirror != null)
         {
-            lastHitMirror.EmitLaser = false;
+            lastHitMirror.DeactivateLaser();
             lastHitMirror = null;
         }
     }

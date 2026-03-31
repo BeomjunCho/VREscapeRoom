@@ -845,6 +845,17 @@ MonoBehaviour:
   installationRoutineCheckpoint:
     _installationRoutineId: c88fc9f2-e9d1-41ea-b937-cdaf92a806d0
     _installationVariants: []
+--- !u!114 &181162044 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2436030544193882237, guid: 8f1f826818dac874ea085aa2ec48e80f, type: 3}
+  m_PrefabInstance: {fileID: 2100603162198231420}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &192912358
 GameObject:
   m_ObjectHideFlags: 0
@@ -6860,6 +6871,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6098647323074329225}
     m_Modifications:
+    - target: {fileID: 2828631175849298767, guid: 8f1f826818dac874ea085aa2ec48e80f, type: 3}
+      propertyPath: UnlockCode
+      value: 364725
+      objectReference: {fileID: 0}
+    - target: {fileID: 2828631175849298767, guid: 8f1f826818dac874ea085aa2ec48e80f, type: 3}
+      propertyPath: displayText
+      value: 
+      objectReference: {fileID: 181162044}
     - target: {fileID: 3007505609735377190, guid: 8f1f826818dac874ea085aa2ec48e80f, type: 3}
       propertyPath: UnlockCode
       value: 364725
@@ -6911,7 +6930,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8502406951834492048, guid: 8f1f826818dac874ea085aa2ec48e80f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 8f1f826818dac874ea085aa2ec48e80f, type: 3}
 --- !u!4 &2153746357412088415
 Transform:

@@ -17,6 +17,7 @@ public abstract class SequenceCodeLock : MonoBehaviour
             button.LockRef = this;
         }
 
+        ClearSequence();
         UpdateDisplay();
     }
 
