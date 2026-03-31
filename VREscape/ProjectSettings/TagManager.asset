@@ -19,6 +19,7 @@ TagManager:
   - QDSUIToggleBorderlessButton
   - QDSUITextSecondaryColor
   - GrabbableProp
+  - Mirror
   layers:
   - Default
   - TransparentFX
