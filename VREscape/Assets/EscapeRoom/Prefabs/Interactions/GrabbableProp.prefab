@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: 30d82194-d056-4249-ab09-4e207580b88d
+  instanceId: 3e2b5ebb-6108-497e-8626-1a0d788b2241
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8
@@ -213,7 +213,7 @@ MonoBehaviour:
   _pointableElement: {fileID: 8759737634505894244}
   _rigidbody: {fileID: 4680990750647908308}
   _grabSource: {fileID: 0}
-  _useClosestPointAsGrabSource: 0
+  _useClosestPointAsGrabSource: 1
   _releaseDistance: 0
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}

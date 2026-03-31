@@ -23,7 +23,7 @@ public class NumberSequenceLock : SequenceCodeLock
         }
         else
         {
-            IsLocked = true;
+            //IsLocked = true;
         }
 
         ClearSequence();
