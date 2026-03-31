@@ -29,10 +29,8 @@ public class Door : MonoBehaviour
 
     public void ToggleDoor()
     {
-        Debug.LogError(doorLock.IsLocked);
-        if (doorLock == null) return;
 
-        if(!doorLock.IsLocked)
+        if (doorLock == null || !doorLock.IsLocked)
         {
             if (isOpen)
             {
