@@ -30,8 +30,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 4688064153693786587}
   - {fileID: 387587816167931133}
+  - {fileID: 4688064153693786587}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6350954687715925496
@@ -46,11 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d485a93c6b65304195a7849b9afefca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LaserSystem: {fileID: 0}
   emitterObject: {fileID: 3273020691676540216}
   maxDistance: 100
   hitMask:
     serializedVersion: 2
-    m_Bits: 123
+    m_Bits: 59
   EmitLaser: 0
 --- !u!1 &2446159822100991581
 GameObject:
@@ -64,7 +65,7 @@ GameObject:
   - component: {fileID: 6742296297643548827}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Mirror
+  m_TagString: LaserMirror
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -549,7 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124f4583f657475469a45ab6fca8f921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pivotTransform: {fileID: 2322283426576901434}
+  _pivotTransform: {fileID: 387587816167931133}
   _rotationAxis: 1
   _constraints:
     MinAngle:

@@ -3,6 +3,7 @@ using UnityEngine;
 //[ExecuteAlways]
 public class LaserMirror : MonoBehaviour
 {
+    [HideInInspector] public LaserSystem LaserSystem;
     [SerializeField] private GameObject emitterObject;
 
     [Header("Ray Settings")]
@@ -59,9 +60,13 @@ public class LaserMirror : MonoBehaviour
 
         // Get next mirror
         LaserMirror hitMirror = null;
-        if (didHit && hit.collider.CompareTag("Mirror"))
+        if (didHit && hit.collider.CompareTag("LaserMirror"))
         {
             hitMirror = hit.collider.GetComponentInParent<LaserMirror>();
+        }
+        if (didHit && hit.collider.CompareTag("LaserReceiver"))
+        {
+
         }
 
         // Deactivate
