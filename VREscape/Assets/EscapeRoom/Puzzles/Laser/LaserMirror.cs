@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[ExecuteAlways]
+//[ExecuteAlways]
 public class LaserMirror : MonoBehaviour
 {
     [SerializeField] private GameObject emitterObject;
@@ -23,6 +23,11 @@ public class LaserMirror : MonoBehaviour
         }
 
         lineRenderer = emitterObject.GetComponent<LineRenderer>();
+    }
+
+    private void OnDisable()
+    {
+        DisableLaser();
     }
 
     private void Update()
