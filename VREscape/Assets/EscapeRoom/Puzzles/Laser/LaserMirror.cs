@@ -21,6 +21,8 @@ public class LaserMirror : MonoBehaviour
     private LaserMirror lastHitMirror;
     private LaserMirror previousMirror;
 
+    private bool lastHitReceiver;
+
     public void ResetPosition()
     {
         isResetting = true;
@@ -85,10 +87,15 @@ public class LaserMirror : MonoBehaviour
                 hitMirror = hm;
         }
 
-        if (didHit && hit.collider.CompareTag("LaserReceiver"))
-        {
-            LaserSystem.RegisterInput("Enter");
-        }
+        // Trigger ending
+        bool hitReceiver = didHit && hit.collider.CompareTag("LaserReceiver");
+
+        if (hitReceiver && !lastHitReceiver)
+            LaserSystem.OnReceiverHit();
+        else if (!hitReceiver && lastHitReceiver)
+            LaserSystem.OnReceiverLost();
+
+        lastHitReceiver = hitReceiver;
 
         // Deactivate previous mirror if it changed
         if (lastHitMirror != null && lastHitMirror != hitMirror)

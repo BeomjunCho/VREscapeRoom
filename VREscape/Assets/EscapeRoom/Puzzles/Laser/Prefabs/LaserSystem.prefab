@@ -512,7 +512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsLocked: 1
-  UnlockCode: 364725
+  UnlockCode: 1364725
   displayText: {fileID: 2436030544193882237}
   mirrors: []
   sparksVisualizer: {fileID: 295629917708550704}
@@ -1322,7 +1322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5319917621694063655, guid: 4023f4ffbde6a43408577bc2f7611cb6, type: 3}
       propertyPath: m_LocalScale.z
-      value: -1.11
+      value: -1.0863439
       objectReference: {fileID: 0}
     - target: {fileID: 5319917621694063655, guid: 4023f4ffbde6a43408577bc2f7611cb6, type: 3}
       propertyPath: m_LocalPosition.z

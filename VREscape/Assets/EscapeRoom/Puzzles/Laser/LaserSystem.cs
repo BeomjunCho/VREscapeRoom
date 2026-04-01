@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 public class LaserSystem : SequenceCodeLock
@@ -44,7 +45,7 @@ public class LaserSystem : SequenceCodeLock
             IsLocked = true;
 
             Debug.Log($"FAILURE!\nCurrent sequence {currentSequence} IS NOT the correct sequence {UnlockCode}");
-            displayText.color = Color.white;
+            displayText.color = Color.red;
         }
 
     }
@@ -72,5 +73,17 @@ public class LaserSystem : SequenceCodeLock
     public int GetMirrorID(LaserMirror m)
     {
         return System.Array.IndexOf(mirrors, m)+1;
-    } 
+    }
+
+    public void OnReceiverHit()
+    {
+        displayText.text = currentSequence + "8";
+        CheckSequence();
+    }
+
+    public void OnReceiverLost()
+    {
+        UpdateDisplay();
+        displayText.color = Color.white;
+    }
 }
