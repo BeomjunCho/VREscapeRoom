@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LaserSystem: {fileID: 0}
   emitterObject: {fileID: 3273020691676540216}
+  mirrorObject: {fileID: 3733208229597899014}
   maxDistance: 100
   hitMask:
     serializedVersion: 2

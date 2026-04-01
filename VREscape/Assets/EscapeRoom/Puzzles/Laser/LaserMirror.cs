@@ -6,6 +6,10 @@ public class LaserMirror : MonoBehaviour
     [HideInInspector] public LaserSystem LaserSystem;
     [SerializeField] private GameObject emitterObject;
 
+    [SerializeField] private GameObject mirrorObject;
+    private float resetSpeed = 2f;
+    private bool isResetting;
+
     [Header("Ray Settings")]
     [SerializeField] private float maxDistance = 100f;
     [SerializeField] private LayerMask hitMask = Physics.DefaultRaycastLayers;
@@ -16,6 +20,11 @@ public class LaserMirror : MonoBehaviour
 
     private LaserMirror lastHitMirror;
     private LaserMirror previousMirror;
+
+    public void ResetPosition()
+    {
+        isResetting = true;
+    }
 
     private void OnEnable()
     {
@@ -29,6 +38,21 @@ public class LaserMirror : MonoBehaviour
 
     private void Update()
     {
+        if (isResetting)
+        {
+            mirrorObject.transform.localRotation = Quaternion.Lerp(
+                mirrorObject.transform.localRotation,
+                Quaternion.identity,
+                resetSpeed * Time.deltaTime
+            );
+
+            if (Quaternion.Angle(mirrorObject.transform.localRotation, Quaternion.identity) < 0.1f)
+            {
+                mirrorObject.transform.localRotation = Quaternion.identity;
+                isResetting = false;
+            }
+        }
+
         if (!EmitLaser)
         {
             DeactivateLaser();
@@ -80,7 +104,7 @@ public class LaserMirror : MonoBehaviour
         lastHitMirror = hitMirror;
     }
 
-    private void ActivateLaser()
+    public void ActivateLaser()
     {
         if (EmitLaser) return;
 
@@ -88,7 +112,7 @@ public class LaserMirror : MonoBehaviour
         LaserSystem.AppendSequence(this);
     }
 
-    private void DeactivateLaser()
+    public void DeactivateLaser()
     {
         if (!EmitLaser) return;
 

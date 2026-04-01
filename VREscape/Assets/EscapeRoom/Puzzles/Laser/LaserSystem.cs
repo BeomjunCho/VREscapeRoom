@@ -13,7 +13,22 @@ public class LaserSystem : SequenceCodeLock
         base.Awake();
 
         mirrors = GetComponentsInChildren<LaserMirror>();
-        foreach (LaserMirror mirror in mirrors) mirror.LaserSystem = this;
+        foreach (LaserMirror mirror in mirrors) { mirror.LaserSystem = this; }
+
+        mirrors[0].DeactivateLaser();
+    }
+
+    public void ActivateLaserSystem()
+    {
+        mirrors[0].DeactivateLaser();
+
+        foreach (LaserMirror mirror in mirrors)
+        {
+            if(mirror != mirrors[0])
+                mirror.ResetPosition();
+        }
+
+        mirrors[0].ActivateLaser();
     }
 
     protected override void CheckSequence()
@@ -22,12 +37,14 @@ public class LaserSystem : SequenceCodeLock
         {
             IsLocked = false;
             Debug.Log($"SUCCESS!\nCurrent sequence {currentSequence} IS the correct sequence {UnlockCode}");
+            displayText.color = Color.green;
         }
         else
         {
             IsLocked = true;
 
             Debug.Log($"FAILURE!\nCurrent sequence {currentSequence} IS NOT the correct sequence {UnlockCode}");
+            displayText.color = Color.white;
         }
 
     }
