@@ -6,9 +6,10 @@ public enum AudioCue
     UiClick,
     UIHover,
     CodeConfirm,
-    DoorOpen,
+    DoorUnlock,
     LaserShot,
-    KeyboardClick,
+    KeyboardPress,
     ButtonPress,
-    MirrorTouch
+    MirrorTouch,
+    LaserLoop
 }

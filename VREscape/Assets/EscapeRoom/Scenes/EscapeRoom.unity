@@ -3908,9 +3908,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioEntries:
   - cue: 1
-    clip: {fileID: 0}
-    defaultVolume: 0
-    defaultPitch: 0
+    clip: {fileID: 8300000, guid: 1f87f58f9b400034db8e83d5f96c748d, type: 3}
+    defaultVolume: 1
+    defaultPitch: 1
     spatialBlend: 0
     rolloffMode: 0
     minDistance: 0
@@ -3918,9 +3918,9 @@ MonoBehaviour:
     spread: 0
     dopplerLevel: 0
   - cue: 2
-    clip: {fileID: 0}
-    defaultVolume: 0
-    defaultPitch: 0
+    clip: {fileID: 8300000, guid: cff8a667ebb82b34792bc489c85695d6, type: 3}
+    defaultVolume: 1
+    defaultPitch: 1
     spatialBlend: 0
     rolloffMode: 0
     minDistance: 0
@@ -3928,9 +3928,9 @@ MonoBehaviour:
     spread: 0
     dopplerLevel: 0
   - cue: 3
-    clip: {fileID: 0}
-    defaultVolume: 0
-    defaultPitch: 0
+    clip: {fileID: 8300000, guid: bf4699096def2e84fb90b575d1cf3a31, type: 3}
+    defaultVolume: 1
+    defaultPitch: 1
     spatialBlend: 0
     rolloffMode: 0
     minDistance: 0
@@ -3938,63 +3938,73 @@ MonoBehaviour:
     spread: 0
     dopplerLevel: 0
   - cue: 4
-    clip: {fileID: 0}
-    defaultVolume: 0
-    defaultPitch: 0
-    spatialBlend: 0
+    clip: {fileID: 8300000, guid: cd797581b49aba948942084a15c8bd45, type: 3}
+    defaultVolume: 1
+    defaultPitch: 1
+    spatialBlend: 1
     rolloffMode: 0
-    minDistance: 0
-    maxDistance: 0
+    minDistance: 3
+    maxDistance: 10
     spread: 0
     dopplerLevel: 0
   - cue: 5
-    clip: {fileID: 0}
-    defaultVolume: 0
-    defaultPitch: 0
-    spatialBlend: 0
+    clip: {fileID: 8300000, guid: 312e8b9bc7602ad45b0b7882f7f5797f, type: 3}
+    defaultVolume: 1
+    defaultPitch: 1
+    spatialBlend: 1
     rolloffMode: 0
-    minDistance: 0
-    maxDistance: 0
+    minDistance: 3
+    maxDistance: 20
     spread: 0
     dopplerLevel: 0
   - cue: 6
-    clip: {fileID: 0}
-    defaultVolume: 0
-    defaultPitch: 0
-    spatialBlend: 0
+    clip: {fileID: 8300000, guid: 416ee5ba16982b34d8e42cf31fb35cbd, type: 3}
+    defaultVolume: 1
+    defaultPitch: 1
+    spatialBlend: 1
     rolloffMode: 0
-    minDistance: 0
-    maxDistance: 0
+    minDistance: 3
+    maxDistance: 10
     spread: 0
     dopplerLevel: 0
   - cue: 7
-    clip: {fileID: 0}
-    defaultVolume: 0
-    defaultPitch: 0
-    spatialBlend: 0
+    clip: {fileID: 8300000, guid: dfe45198cba8f38488b165f1c721d164, type: 3}
+    defaultVolume: 1
+    defaultPitch: 1
+    spatialBlend: 1
     rolloffMode: 0
-    minDistance: 0
-    maxDistance: 0
+    minDistance: 3
+    maxDistance: 10
     spread: 0
     dopplerLevel: 0
   - cue: 8
-    clip: {fileID: 0}
-    defaultVolume: 0
-    defaultPitch: 0
-    spatialBlend: 0
+    clip: {fileID: 8300000, guid: 7039dfd94e492f2498f30a6ccb8dd469, type: 3}
+    defaultVolume: 1
+    defaultPitch: 1
+    spatialBlend: 1
     rolloffMode: 0
-    minDistance: 0
-    maxDistance: 0
+    minDistance: 3
+    maxDistance: 10
     spread: 0
     dopplerLevel: 0
-  - cue: 5
-    clip: {fileID: 0}
-    defaultVolume: 0
-    defaultPitch: 0
-    spatialBlend: 0
+  - cue: 9
+    clip: {fileID: 8300000, guid: 7ee32a18e421b5c429d2a6639d6314c9, type: 3}
+    defaultVolume: 1
+    defaultPitch: 1
+    spatialBlend: 1
     rolloffMode: 0
-    minDistance: 0
-    maxDistance: 0
+    minDistance: 3
+    maxDistance: 10
+    spread: 0
+    dopplerLevel: 0
+  - cue: 10
+    clip: {fileID: 8300000, guid: 6a6c93ced6470d84bb71026039802796, type: 3}
+    defaultVolume: 1
+    defaultPitch: 1
+    spatialBlend: 1
+    rolloffMode: 0
+    minDistance: 3
+    maxDistance: 10
     spread: 0
     dopplerLevel: 0
   oneShotSourcePrefab: {fileID: 0}
