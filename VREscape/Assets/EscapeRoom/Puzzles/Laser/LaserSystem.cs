@@ -84,8 +84,7 @@ public class LaserSystem : SequenceCodeLock
     public void OnReceiverHit()
     {
         displayText.text = currentSequence + "8";
-        //delete this later
-        laserOn.Invoke();
+        //laserOn.Invoke(); //comment out
         CheckSequence();
     }
 

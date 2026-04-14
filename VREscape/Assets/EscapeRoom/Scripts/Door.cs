@@ -5,6 +5,8 @@ public class Door : MonoBehaviour
     [SerializeField] private float speed = 3f;
     [SerializeField] private float openAngle = 90f;
 
+    [SerializeField] private bool invertSwing = false;
+
     private bool isOpen = false;
     private float targetY = -90f;
     private Transform player;
@@ -49,7 +51,8 @@ public class Door : MonoBehaviour
             {
                 Vector3 toPlayer = player.position - transform.position;
                 float dot = Vector3.Dot(transform.right, toPlayer);
-                targetY = dot >= 0f ? -90f + openAngle : -90f - openAngle;
+                bool swingPositive = invertSwing ? dot > 0f : dot <= 0f;
+                targetY = swingPositive ? -90f - openAngle : -90f + openAngle;
             }
 
             isOpen = !isOpen;
