@@ -22,6 +22,7 @@ public class LaserMirror : MonoBehaviour
     private LaserMirror previousMirror;
 
     private bool lastHitReceiver;
+    private Vector3 receiverLocation;
 
     public void ResetPosition()
     {
@@ -90,7 +91,10 @@ public class LaserMirror : MonoBehaviour
         // Trigger ending
         bool hitReceiver = didHit && hit.collider.CompareTag("LaserReceiver");
 
-        if (hitReceiver && !lastHitReceiver)
+        if (hitReceiver)
+            LaserSystem.receiverLocation = hit.point;
+
+            if (hitReceiver && !lastHitReceiver)
             LaserSystem.OnReceiverHit();
         else if (!hitReceiver && lastHitReceiver)
             LaserSystem.OnReceiverLost();
@@ -117,6 +121,7 @@ public class LaserMirror : MonoBehaviour
 
         EmitLaser = true;
         LaserSystem.AppendSequence(this);
+        AudioManager.Instance.PlayOneShot(AudioCue.LaserHit);
     }
 
     public void DeactivateLaser()
@@ -136,5 +141,7 @@ public class LaserMirror : MonoBehaviour
             lastHitMirror.DeactivateLaser();
             lastHitMirror = null;
         }
+
+        lastHitReceiver = false;
     }
 }

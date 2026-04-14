@@ -14,6 +14,11 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
     }
+    public void Start()
+    {
+        AudioManager.Instance.PlayLoop(AudioCue.Ambience);
+    }
+
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
