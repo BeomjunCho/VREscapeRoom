@@ -9,7 +9,7 @@ public class Door : MonoBehaviour
     private float targetY = -90f;
     private Transform player;
 
-    [SerializeField] private SequenceCodeLock doorLock = null;
+    public bool isLocked = false;
 
     private void Start()
     {
@@ -27,10 +27,19 @@ public class Door : MonoBehaviour
         );
     }
 
+    public void Lock()
+    {
+        isLocked = true;
+    }
+    public void Unlock()
+    {
+        isLocked = false;
+    }
+
     public void ToggleDoor()
     {
 
-        if (doorLock == null || !doorLock.IsLocked)
+        if (!isLocked)
         {
             if (isOpen)
             {
@@ -45,7 +54,7 @@ public class Door : MonoBehaviour
 
             isOpen = !isOpen;
         }
-        else if (doorLock.IsLocked)
+        else
         {
             CancelInvoke(nameof(ResetNudge));
             targetY = -90f;

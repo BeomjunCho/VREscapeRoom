@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 public class LaserSystem : SequenceCodeLock
 {
     public string UnlockCode = "1234"; 
@@ -9,6 +10,10 @@ public class LaserSystem : SequenceCodeLock
 
     [SerializeField] private LaserMirror[] mirrors;
     [SerializeField] private GameObject sparksVisualizer;
+
+    [SerializeField] private UnityEvent laserOn;
+    [SerializeField] private UnityEvent laserOff;
+
     protected override void Awake()
     {
         base.Awake();
@@ -39,6 +44,7 @@ public class LaserSystem : SequenceCodeLock
             IsLocked = false;
             Debug.Log($"SUCCESS!\nCurrent sequence {currentSequence} IS the correct sequence {UnlockCode}");
             displayText.color = Color.green;
+            laserOn.Invoke();
         }
         else
         {
@@ -78,12 +84,15 @@ public class LaserSystem : SequenceCodeLock
     public void OnReceiverHit()
     {
         displayText.text = currentSequence + "8";
+        //delete this later
+        laserOn.Invoke();
         CheckSequence();
     }
 
     public void OnReceiverLost()
     {
         UpdateDisplay();
+        laserOff.Invoke();
         displayText.color = Color.white;
     }
 }
