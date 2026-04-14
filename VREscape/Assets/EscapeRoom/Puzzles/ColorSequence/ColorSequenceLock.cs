@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering.VirtualTexturing;
 
 [RequireComponent(typeof(ColorSequence))]
 public class ColorSequenceLock : SequenceCodeLock
@@ -39,9 +40,17 @@ public class ColorSequenceLock : SequenceCodeLock
     protected override void CheckSequence()
     {
         matchedCode = codes.Find(e => e.Code == currentSequence);
-        displayText.text = matchedCode != null
-            ? matchedCode.DisplayOutput
-            : "[ERROR]\nSequence not associated with system function";
+
+        if(matchedCode != null)
+        {
+            AudioManager.Instance.PlayOneShot(AudioCue.CodeUnlock);
+            displayText.text = matchedCode.DisplayOutput;
+        }
+        else
+        {
+            AudioManager.Instance.PlayOneShot(AudioCue.UiNegative);
+            displayText.text = "[ERROR]\nSequence not associated with system function";
+        }
         ClearSequence();
     }
 

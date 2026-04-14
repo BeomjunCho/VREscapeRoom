@@ -22,15 +22,21 @@ public class NumberSequenceLock : SequenceCodeLock
     {
         if (currentSequence == UnlockCode)
         {
-            IsLocked = false;
-            unlockEvent.Invoke();
+            OnUnlock();
+            AudioManager.Instance.PlayOneShot(AudioCue.CodeUnlock);
         }
         else
         {
-            //IsLocked = true;
+            AudioManager.Instance.PlayOneShot(AudioCue.UiNegative);
         }
 
         ClearSequence();
+    }
+
+    protected override void OnUnlock()
+    {
+        IsLocked = false;
+        unlockEvent.Invoke();
     }
 
     protected override void UpdateDisplay()

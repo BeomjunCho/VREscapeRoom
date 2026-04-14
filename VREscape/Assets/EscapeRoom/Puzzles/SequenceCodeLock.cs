@@ -24,12 +24,23 @@ public abstract class SequenceCodeLock : MonoBehaviour
 
     public void RegisterInput(string inAction)
     {
+        
         if (inAction == "Enter")
+        {
             CheckSequence();
+        }
+            
         else if (inAction == "Clear")
+        {
+            AudioManager.Instance.PlayOneShot(AudioCue.UiPositive);
             ClearSequence();
+        }
+            
         else
+        {
+            AudioManager.Instance.PlayOneShot(AudioCue.ButtonClick);
             AppendSequence(inAction);
+        }
 
         UpdateDisplay();
     }
@@ -48,5 +59,7 @@ public abstract class SequenceCodeLock : MonoBehaviour
     }
 
     protected virtual void CheckSequence(){}
+
+    protected virtual void OnUnlock() { }
     protected virtual void UpdateDisplay(){}
 }

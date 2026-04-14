@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 7608007970344345996}
   - component: {fileID: 4030938181922532530}
   - component: {fileID: 7496059340656225618}
+  - component: {fileID: 7276884725160810525}
   m_Layer: 0
   m_Name: PokeButton
   m_TagString: Untagged
@@ -407,9 +408,9 @@ MonoBehaviour:
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LaserSystem, Assembly-CSharp
-        m_MethodName: ActivateLaserSystem
+      - m_Target: {fileID: 7276884725160810525}
+        m_TargetAssemblyTypeName: InteractSFX, Assembly-CSharp
+        m_MethodName: OnInteract
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -428,3 +429,16 @@ MonoBehaviour:
   _whenCancel:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7276884725160810525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7213832337990699630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c52d43e23d3ba234c9b31a908bc20a87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cue: 8

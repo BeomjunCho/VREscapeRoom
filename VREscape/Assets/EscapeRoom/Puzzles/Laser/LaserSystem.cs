@@ -2,6 +2,8 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
+using static UnityEditor.FilePathAttribute;
 public class LaserSystem : SequenceCodeLock
 {
     public string UnlockCode = "1234"; 
@@ -13,6 +15,8 @@ public class LaserSystem : SequenceCodeLock
 
     [SerializeField] private UnityEvent laserOn;
     [SerializeField] private UnityEvent laserOff;
+
+    public Vector3 receiverLocation;
 
     protected override void Awake()
     {
@@ -35,6 +39,9 @@ public class LaserSystem : SequenceCodeLock
         }
 
         mirrors[0].ActivateLaser();
+
+        AudioManager.Instance.StopLoop(AudioCue.LaserLoop);
+        AudioManager.Instance.PlayLoop(AudioCue.LaserLoop);
     }
 
     protected override void CheckSequence()
@@ -43,6 +50,7 @@ public class LaserSystem : SequenceCodeLock
         {
             IsLocked = false;
             Debug.Log($"SUCCESS!\nCurrent sequence {currentSequence} IS the correct sequence {UnlockCode}");
+            AudioManager.Instance.PlayOneShot3D(AudioCue.UiPositive, receiverLocation);
             displayText.color = Color.green;
             laserOn.Invoke();
         }
@@ -51,6 +59,7 @@ public class LaserSystem : SequenceCodeLock
             IsLocked = true;
 
             Debug.Log($"FAILURE!\nCurrent sequence {currentSequence} IS NOT the correct sequence {UnlockCode}");
+            AudioManager.Instance.PlayOneShot3D(AudioCue.UiNegative, receiverLocation);
             displayText.color = Color.red;
         }
 
@@ -66,6 +75,7 @@ public class LaserSystem : SequenceCodeLock
     {
         base.AppendSequence(GetMirrorID(mirror).ToString());
         //Debug.LogWarning("Appended! Current sequence: " + currentSequence);
+
         UpdateDisplay();
     }
 
@@ -73,6 +83,7 @@ public class LaserSystem : SequenceCodeLock
     {
         currentSequence = currentSequence.Replace(GetMirrorID(mirror).ToString(), "");
         //Debug.LogWarning("Removed! Current sequence: " + currentSequence);
+        OnReceiverLost();
         UpdateDisplay();
     }
 

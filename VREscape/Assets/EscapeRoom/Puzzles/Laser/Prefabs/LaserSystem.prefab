@@ -434,6 +434,7 @@ Transform:
   - {fileID: 6215360427298165425}
   - {fileID: 6809976373972015588}
   - {fileID: 5465570488093757724}
+  - {fileID: 6972169781706182879}
   m_Father: {fileID: 3288514810110620330}
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!114 &793345827366843316
@@ -496,7 +497,6 @@ Transform:
   - {fileID: 6026785865672286165}
   - {fileID: 3095260395977797952}
   - {fileID: 1661879295953245977}
-  - {fileID: 6972169781706182879}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2828631175849298767
@@ -516,6 +516,12 @@ MonoBehaviour:
   displayText: {fileID: 2436030544193882237}
   mirrors: []
   sparksVisualizer: {fileID: 295629917708550704}
+  laserOn:
+    m_PersistentCalls:
+      m_Calls: []
+  laserOff:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6103943671729420827
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,43 +924,83 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3288514810110620330}
+    m_TransformParent: {fileID: 8294487058386340726}
     m_Modifications:
     - target: {fileID: 7213832337990699630, guid: 8338933fe5b4a4f488affcb54c9ac96a, type: 3}
       propertyPath: m_Name
       value: PokeButton
       objectReference: {fileID: 0}
+    - target: {fileID: 7276884725160810525, guid: 8338933fe5b4a4f488affcb54c9ac96a, type: 3}
+      propertyPath: cue
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7496059340656225618, guid: 8338933fe5b4a4f488affcb54c9ac96a, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7496059340656225618, guid: 8338933fe5b4a4f488affcb54c9ac96a, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7496059340656225618, guid: 8338933fe5b4a4f488affcb54c9ac96a, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2828631175849298767}
+    - target: {fileID: 7496059340656225618, guid: 8338933fe5b4a4f488affcb54c9ac96a, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7902618410248661326}
+    - target: {fileID: 7496059340656225618, guid: 8338933fe5b4a4f488affcb54c9ac96a, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7496059340656225618, guid: 8338933fe5b4a4f488affcb54c9ac96a, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ActivateLaserSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 7496059340656225618, guid: 8338933fe5b4a4f488affcb54c9ac96a, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnInteract
+      objectReference: {fileID: 0}
+    - target: {fileID: 7496059340656225618, guid: 8338933fe5b4a4f488affcb54c9ac96a, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LaserSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7496059340656225618, guid: 8338933fe5b4a4f488affcb54c9ac96a, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: InteractSFX, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7496059340656225618, guid: 8338933fe5b4a4f488affcb54c9ac96a, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7608007970344345996, guid: 8338933fe5b4a4f488affcb54c9ac96a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.379
+      value: 0.2998131
       objectReference: {fileID: 0}
     - target: {fileID: 7608007970344345996, guid: 8338933fe5b4a4f488affcb54c9ac96a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.249
+      value: -0.0010000467
       objectReference: {fileID: 0}
     - target: {fileID: 7608007970344345996, guid: 8338933fe5b4a4f488affcb54c9ac96a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.045
+      value: 0.4709334
       objectReference: {fileID: 0}
     - target: {fileID: 7608007970344345996, guid: 8338933fe5b4a4f488affcb54c9ac96a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.92387956
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7608007970344345996, guid: 8338933fe5b4a4f488affcb54c9ac96a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7608007970344345996, guid: 8338933fe5b4a4f488affcb54c9ac96a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.38268343
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7608007970344345996, guid: 8338933fe5b4a4f488affcb54c9ac96a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7608007970344345996, guid: 8338933fe5b4a4f488affcb54c9ac96a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -978,6 +1024,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7608007970344345996, guid: 8338933fe5b4a4f488affcb54c9ac96a, type: 3}
   m_PrefabInstance: {fileID: 673021552869536083}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7902618410248661326 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7276884725160810525, guid: 8338933fe5b4a4f488affcb54c9ac96a, type: 3}
+  m_PrefabInstance: {fileID: 673021552869536083}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c52d43e23d3ba234c9b31a908bc20a87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1692507831111606866
 PrefabInstance:
   m_ObjectHideFlags: 0

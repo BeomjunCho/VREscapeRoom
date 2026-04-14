@@ -3,13 +3,13 @@ public enum AudioCue
     None = 0,
 
     Ambience,
-    UiClick,
-    UIHover,
-    CodeConfirm,
-    DoorUnlock,
-    LaserShot,
-    KeyboardPress,
+    UiPositive,
+    UiNegative,
+    CodeUnlock,
+    Door,
+    Grab,
     ButtonPress,
-    MirrorTouch,
+    ButtonClick,
+    LaserHit,
     LaserLoop
 }

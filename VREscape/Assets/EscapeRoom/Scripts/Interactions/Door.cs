@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Door : MonoBehaviour
@@ -31,10 +32,12 @@ public class Door : MonoBehaviour
 
     public void Lock()
     {
+        StartCoroutine(PlayUnlockSFX());
         isLocked = true;
     }
     public void Unlock()
     {
+        StartCoroutine(PlayUnlockSFX());
         isLocked = false;
     }
 
@@ -43,6 +46,8 @@ public class Door : MonoBehaviour
 
         if (!isLocked)
         {
+            AudioManager.Instance.PlayOneShot(AudioCue.Door);
+
             if (isOpen)
             {
                 targetY = -90f;
@@ -70,5 +75,11 @@ public class Door : MonoBehaviour
     private void ResetNudge()
     {
         targetY += 5f;
+    }
+
+    private IEnumerator PlayUnlockSFX()
+    {
+        yield return new WaitForSeconds(Random.Range(0f, 0.15f));
+        AudioManager.Instance.PlayOneShot3D(AudioCue.Door, transform.position);
     }
 }
