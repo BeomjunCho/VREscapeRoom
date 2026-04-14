@@ -1,10 +1,13 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class NumberSequenceLock : SequenceCodeLock
 {
     public string UnlockCode = "1234";
     protected override int MaxLength => UnlockCode.Length;
+
+    [SerializeField] private UnityEvent unlockEvent;
 
     // Display
     [SerializeField] private TMP_Text displayText;
@@ -20,6 +23,7 @@ public class NumberSequenceLock : SequenceCodeLock
         if (currentSequence == UnlockCode)
         {
             IsLocked = false;
+            unlockEvent.Invoke();
         }
         else
         {

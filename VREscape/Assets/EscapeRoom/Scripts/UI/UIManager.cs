@@ -1,5 +1,7 @@
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private Vector3 menuOffset = new Vector3(0,0,0.5f);
 
+    public Color selectedColor;
+    public Color normalColor;
     private bool MenuInput => PlayerController.Instance.menu;
     private bool lastInput;
     private bool menuActive;
@@ -47,6 +51,20 @@ public class UIManager : MonoBehaviour
         }
 
         lastInput = MenuInput;
+    }
+
+    public void UpdateToggleColor(Toggle toggle)
+    {
+        toggle.targetGraphic.color = toggle.isOn
+            ? selectedColor
+            : normalColor;
+    }
+
+    public void UpdateToggleColor(Toggle toggle, bool active)
+    {
+        toggle.targetGraphic.color = active
+            ? selectedColor
+            : normalColor;
     }
 
 }
