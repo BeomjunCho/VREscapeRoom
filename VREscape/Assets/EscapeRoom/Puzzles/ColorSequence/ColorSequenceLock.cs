@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering.VirtualTexturing;
 
 [RequireComponent(typeof(ColorSequence))]
 public class ColorSequenceLock : SequenceCodeLock

@@ -1,9 +1,6 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Rendering;
-using static UnityEditor.FilePathAttribute;
 public class LaserSystem : SequenceCodeLock
 {
     public string UnlockCode = "1234"; 
