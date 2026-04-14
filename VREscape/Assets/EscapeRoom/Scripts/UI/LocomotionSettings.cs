@@ -1,10 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LocomotionToggle : MonoBehaviour
+public class LocomotionSettings : MonoBehaviour
 {
-    [SerializeField] private Color selectedColor;
-    [SerializeField] private Color normalColor;
+    [Header("Locomotion Mode")]
 
     [SerializeField] private Toggle teleport;
     [SerializeField] private GameObject[] teleportObjects = new GameObject[0];
@@ -12,6 +11,7 @@ public class LocomotionToggle : MonoBehaviour
     [SerializeField] private Toggle slide;
     [SerializeField] private GameObject[] slideObjects = new GameObject[0];
 
+    [Header("Vignette")]
     [SerializeField] private Toggle vignette;
     [SerializeField] private GameObject vignetteObject;
     private void Awake()
@@ -32,16 +32,8 @@ public class LocomotionToggle : MonoBehaviour
         foreach (GameObject obj in slideObjects) { obj.SetActive(locomotion); }
         foreach (GameObject obj in teleportObjects) { obj.SetActive(!locomotion); }
 
-        teleport.targetGraphic.color = teleport.isOn
-            ? selectedColor
-            : normalColor;
-
-        slide.targetGraphic.color = slide.isOn
-            ? selectedColor
-            : normalColor;
-
-        vignette.targetGraphic.color = slide.isOn
-           ? selectedColor
-            : normalColor;
+        UIManager.Instance.UpdateToggleColor(slide); 
+        UIManager.Instance.UpdateToggleColor(teleport);
+        UIManager.Instance.UpdateToggleColor(vignette, slide.isOn);
     }
 }
