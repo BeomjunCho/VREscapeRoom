@@ -4,6 +4,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     [SerializeField] private float speed = 3f;
+    [SerializeField] private float startAngle = -90f;
     [SerializeField] private float openAngle = 90f;
 
     [SerializeField] private bool invertSwing = false;
@@ -16,7 +17,8 @@ public class Door : MonoBehaviour
 
     private void Start()
     {
-        transform.localRotation = Quaternion.Euler(0f, -90f, 0f);
+        targetY = startAngle;
+        transform.localRotation = Quaternion.Euler(0f, startAngle, 0f);
         player = GameObject.FindWithTag("Player").transform;
     }
 
@@ -43,21 +45,19 @@ public class Door : MonoBehaviour
 
     public void ToggleDoor()
     {
-
         if (!isLocked)
         {
             AudioManager.Instance.PlayOneShot(AudioCue.Door);
-
             if (isOpen)
             {
-                targetY = -90f;
+                targetY = startAngle;
             }
             else
             {
                 Vector3 toPlayer = player.position - transform.position;
                 float dot = Vector3.Dot(transform.right, toPlayer);
                 bool swingPositive = invertSwing ? dot > 0f : dot <= 0f;
-                targetY = swingPositive ? -90f - openAngle : -90f + openAngle;
+                targetY = swingPositive ? startAngle - openAngle : startAngle + openAngle;
             }
 
             isOpen = !isOpen;
@@ -65,16 +65,15 @@ public class Door : MonoBehaviour
         else
         {
             CancelInvoke(nameof(ResetNudge));
-            targetY = -90f;
+            targetY = startAngle; 
             targetY -= 5f;
             Invoke(nameof(ResetNudge), 0.15f);
         }
-
     }
 
     private void ResetNudge()
     {
-        targetY += 5f;
+        targetY = startAngle; 
     }
 
     private IEnumerator PlayUnlockSFX()
